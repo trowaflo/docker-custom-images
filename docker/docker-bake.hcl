@@ -1,3 +1,7 @@
+variable "GITHUB_ACTOR" {}
+variable "GITHUB_REF_NAME" {}
+variable "GITHUB_SHA" {}
+
 group "default" {
     targets = ["alpineEnvsubst"]
 }
