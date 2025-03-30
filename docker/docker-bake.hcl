@@ -6,5 +6,6 @@ target "alpineEnvsubst" {
   context = "./docker/alpineEnvsubst"
   dockerfile = "Dockerfile"
   # output = ["./bin"]
+  tags = ["registry:local"]
   targets = ["image-local"]
 }
