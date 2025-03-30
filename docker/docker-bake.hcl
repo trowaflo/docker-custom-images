@@ -10,9 +10,4 @@ target "alpineEnvsubst" {
   context = "./docker/alpineEnvsubst"
   dockerfile = "Dockerfile"
   tags = ["ghcr.io/${GITHUB_ACTOR}/alpine-envsubst:${GITHUB_REF_NAME}"]
-  # output = [
-  #   "type=image",
-  #   "name=ghcr.io/${GITHUB_ACTOR}/alpine-envsubst:${GITHUB_REF_NAME}",
-  #   "name=ghcr.io/${GITHUB_ACTOR}/alpine-envsubst:${GITHUB_SHA}"
-  # ]
 }
