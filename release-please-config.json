@@ -1,0 +1,8 @@
+{
+	"separate-pull-requests": true,
+	"always-update": true,
+	"release-type": "simple",
+  "packages": {
+    "docker/alpineEnvsubst": {}
+  }
+}
