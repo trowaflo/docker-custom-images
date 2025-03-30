@@ -9,5 +9,10 @@ group "default" {
 target "alpineEnvsubst" {
   context = "./docker/alpineEnvsubst"
   dockerfile = "Dockerfile"
-  tags = ["ghcr.io/${GITHUB_ACTOR}/alpine-envsubst:${GITHUB_REF_NAME}"]
+  tags = ["ghcr.io/${GITHUB_ACTOR}/docker-custom-images/alpine-envsubst:${GITHUB_REF_NAME}"]
+}
+target "test" {
+  context = "./docker/test"
+  dockerfile = "Dockerfile"
+  tags = ["ghcr.io/${GITHUB_ACTOR}/docker-custom-images/test:${GITHUB_REF_NAME}"]
 }
