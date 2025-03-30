@@ -28,7 +28,7 @@ jobs:
           source: .
           files: |
             ./docker/docker-bake.hcl
-          push: false
+          push: true
 
       # - name: Build the hello-docker Docker image
       #   run: |
