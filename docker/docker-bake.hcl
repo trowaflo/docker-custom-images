@@ -5,4 +5,5 @@ group "default" {
 target "alpineEnvsubst" {
     context = "./alpineEnvsubst"
     dockerfile = "Dockerfile"
+    tags = ["registry:local"]
 }
