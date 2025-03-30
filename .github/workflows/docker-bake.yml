@@ -25,6 +25,9 @@ jobs:
         uses: docker/bake-action@v6
         with:
           # source: docker/docker-bake.hcl
+          source: .
+          files: |
+            ./docker/docker-bake.hcl
           push: false
 
       # - name: Build the hello-docker Docker image
