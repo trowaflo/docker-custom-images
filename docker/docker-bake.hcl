@@ -7,5 +7,5 @@ target "alpineEnvsubst" {
   dockerfile = "Dockerfile"
   # output = ["./bin"]
   tags = ["registry:local"]
-  targets = ["image-local"]ker workflow and Dockerfile for alpineEnvsubst)
+  targets = ["image-local"]
 }
