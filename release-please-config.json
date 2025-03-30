@@ -1,5 +1,6 @@
 {
 	"separate-pull-requests": true,
+  "include-component-in-tag": true,
 	"always-update": true,
 	"release-type": "simple",
   "packages": {
