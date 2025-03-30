@@ -28,7 +28,7 @@ jobs:
           source: .
           files: |
             ./docker/docker-bake.hcl
-          push: true
+          push: ${{ github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/') }}
 
       # - name: Build the hello-docker Docker image
       #   run: |
