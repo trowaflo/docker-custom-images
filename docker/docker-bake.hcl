@@ -3,7 +3,7 @@ group "default" {
 }
 
 target "alpineEnvsubst" {
-  context = "./alpineEnvsubst"
+  context = "./docker/alpineEnvsubst"
   dockerfile = "Dockerfile"
   output = ["./bin"]
 }
