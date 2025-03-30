@@ -5,5 +5,6 @@ group "default" {
 target "alpineEnvsubst" {
   context = "./docker/alpineEnvsubst"
   dockerfile = "Dockerfile"
-  output = ["./bin"]
+  # output = ["./bin"]
+  targets = ["image-local"]
 }
