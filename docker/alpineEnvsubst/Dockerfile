@@ -5,9 +5,6 @@ FROM alpine:3.21
 RUN apk add --no-cache gettext=0.22.5-r0 && \
     adduser -D appuser
 
-# Créer un répertoire de travail
-WORKDIR /home/appuser
-
 # Passer à cet utilisateur
 USER appuser
 
