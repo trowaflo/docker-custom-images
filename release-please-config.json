@@ -5,12 +5,10 @@
 	"release-type": "simple",
   "packages": {
     "docker/alpineEnvsubst": {
-      "package-name": "alpineEnvsubst",
-      "release-type": "docker"
+      "package-name": "alpineEnvsubst"
     },
     "docker/test": {
-      "package-name": "test",
-      "release-type": "docker"
+      "package-name": "test"
     }
   }
 }
