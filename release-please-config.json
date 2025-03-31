@@ -4,7 +4,13 @@
 	"always-update": true,
 	"release-type": "simple",
   "packages": {
-    "docker/alpineEnvsubst": {},
-    "docker/test": {}
+    "docker/alpineEnvsubst": {
+      "package-name": "alpineEnvsubst",
+      "release-type": "docker"
+    },
+    "docker/test": {
+      "package-name": "test",
+      "release-type": "docker"
+    }
   }
 }
