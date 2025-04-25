@@ -6,9 +6,6 @@
   "packages": {
     "docker/alpineEnvsubst": {
       "package-name": "alpineEnvsubst"
-    },
-    "docker/test": {
-      "package-name": "test"
     }
   }
 }
