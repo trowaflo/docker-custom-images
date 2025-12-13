@@ -5,8 +5,8 @@ LABEL maintainer="https://github.com/trowaflo/docker-custom-images"
 LABEL description="Alpine with envsubst utility"
 
 # Ajouter gettext et créer un utilisateur standard dans une seule commande
-RUN apk add --no-cache gettext=0.22.5-r0 && \
-    adduser -D appuser
+RUN apk add --no-cache gettext=0.22.5-r0 \
+    && adduser -D appuser
 
 # Passer à cet utilisateur
 USER appuser
