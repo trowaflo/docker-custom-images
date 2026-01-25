@@ -9,7 +9,27 @@ variable "GITHUB_SHA" {}
 # Transformations applied in order: [ → -, ] → -, / → -, : → -, (space) → -, lowercase, trim dashes
 function "sanitize_tag" {
   params = [tag]
-  result = trimprefix(trimsuffix(lower(replace(replace(replace(replace(replace(tag, "[", "-"), "]", "-"), "/", "-"), ":", "-"), " ", "-")), "-"), "-")
+  result = trimprefix(
+    trimsuffix(
+      lower(
+        replace(
+          replace(
+            replace(
+              replace(
+                replace(tag, "[", "-"),
+                "]", "-"
+              ),
+              "/", "-"
+            ),
+            ":", "-"
+          ),
+          " ", "-"
+        )
+      ),
+      "-"
+    ),
+    "-"
+  )
 }
 
 group "default" {
