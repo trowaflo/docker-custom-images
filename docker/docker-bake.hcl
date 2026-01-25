@@ -3,8 +3,9 @@ variable "GITHUB_REF_NAME" {}
 variable "GITHUB_SHA" {}
 
 # Function to sanitize Docker tag names by replacing invalid characters
-# Docker tags can only contain: a-z, A-Z, 0-9, _, ., -
-# They cannot contain: [, ], /, :, spaces, and other special characters
+# Docker tags specification allows: a-z, A-Z, 0-9, _, ., -
+# This function normalizes to lowercase and replaces invalid characters with dashes
+# Transformations applied in order: [ → -, ] → -, / → -, : → -, (space) → -, then lowercase
 function "sanitize_tag" {
   params = [tag]
   result = lower(replace(replace(replace(replace(replace(tag, "[", "-"), "]", "-"), "/", "-"), ":", "-"), " ", "-"))
