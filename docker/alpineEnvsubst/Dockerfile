@@ -1,5 +1,5 @@
 # kics-scan disable=b03a748a-542d-44f4-bb86-9199ab4fd2d5
-FROM alpine:3.23
+FROM alpine:3.23@sha256:fd791d74b68913cbb027c6546007b3f0d3bc45125f797758156952bc2d6daf40
 
 LABEL org.opencontainers.image.authors="trowaflo"
 LABEL org.opencontainers.image.url="https://github.com/trowaflo/docker-custom-images"
