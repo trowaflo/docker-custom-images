@@ -1,9 +1,40 @@
 name: publish
 
-on: [push]
+on:
+  push:
+    branches: [main]
+    tags: ['*']
+  pull_request:
 
 jobs:
+  build:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    # The branch controls the bake file and Dockerfiles: no registry login, read-only token.
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
+      - name: Build
+        uses: docker/bake-action@v7
+        env:
+          GITHUB_ACTOR: ${{ github.actor }}
+          GITHUB_REF_NAME: ${{ github.head_ref }}
+          GITHUB_SHA: ${{ github.sha }}
+        with:
+          source: .
+          files: |
+            ./docker/docker-bake.hcl
+          push: false
+
   publish-hello-docker-image:
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     permissions:
       packages: write
@@ -31,7 +62,7 @@ jobs:
           source: .
           files: |
             ./docker/docker-bake.hcl
-          push: ${{ github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/') }}
+          push: true
 
       # - name: Build the hello-docker Docker image
       #   run: |
