@@ -5,7 +5,7 @@ LABEL org.opencontainers.image.authors="trowaflo"
 LABEL org.opencontainers.image.url="https://github.com/trowaflo/docker-custom-images"
 LABEL org.opencontainers.image.description="Alpine with envsubst utility"
 
-RUN apk add --no-cache gettext=0.24.1-r1 \
+RUN apk add --no-cache gettext=1.0-r0 \
     && adduser -D appuser
 
 USER appuser
