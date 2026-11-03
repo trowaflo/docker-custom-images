@@ -2,20 +2,14 @@ name: Gitleaks
 
 on: [pull_request]
 
-jobs:
-  gitleaks:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
-      repository-projects: write
-    steps:
-      - name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-        with:
-          fetch-depth: 0
+permissions: {}
 
-      - name: Gitleaks Action
-        uses: gitleaks/gitleaks-action@ff98106e4c7b2bc287b24eaf42907196329070c7 # v2.3.9
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+jobs:
+  security:
+    uses: trowaflo/github-actions/.github/workflows/security.yml@c62d1b93d63953495704ff3c980b0ec8414e54f9 # v4.0.1
+    permissions:
+      contents: read
+      pull-requests: write
+      security-events: write
+    with:
+      enable_kics: false
