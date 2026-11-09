@@ -6,7 +6,7 @@ permissions: {}
 
 jobs:
   security:
-    uses: trowaflo/github-actions/.github/workflows/security.yml@c62d1b93d63953495704ff3c980b0ec8414e54f9 # v4.0.1
+    uses: trowaflo/github-actions/.github/workflows/security.yml@3f2cc0504b841ef8f0b1dfcc4edd273309eebd27 # v5.1.1
     permissions:
       contents: read
       pull-requests: write
